@@ -76,14 +76,14 @@ For i = 2 To last_row
     summary_row = 2
     
         Dim total_volume As Variant
-        
-    For k = 2 To last_row
+    
+    For K = 2 To last_row
     
     
-    If Cells(k, 1).Value <> Cells(k + 1, 1).Value Then
+    If Cells(K, 1).Value <> Cells(K + 1, 1).Value Then
     
     'add last volume tick before change
-    total_volume = total_volume + Cells(k, 7).Value
+    total_volume = total_volume + Cells(K, 7).Value
       
     'print total volume to sheet
     Range("M" & summary_row).Value = total_volume
@@ -97,11 +97,11 @@ For i = 2 To last_row
     Else
     
     'otherwise just keep adding!
-        total_volume = total_volume + Cells(k, 7).Value
+        total_volume = total_volume + Cells(K, 7).Value
 
     End If
     
-    Next k
+    Next K
     
     'set up loop to find challenge answers
     For m = 2 To last_row
@@ -162,11 +162,29 @@ For i = 2 To last_row
     Range("P" & summary_table).Value = greatest_ticker
     Range("Q" & summary_table).Value = greatest_volume
     
-   
+    'conditional formatting (must be in cell A1 :/ )
+    ActiveCell.Offset(0, 10).Columns("A:A").EntireColumn.Select
+    Selection.FormatConditions.Add Type:=xlCellValue, Operator:=xlGreater, _
+        Formula1:="=0"
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 5287936
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    Selection.FormatConditions.Add Type:=xlCellValue, Operator:=xlLess, _
+        Formula1:="=0"
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    With Selection.FormatConditions(1).Interior
+        .PatternColorIndex = xlAutomatic
+        .Color = 255
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).StopIfTrue = False
+    ActiveCell.Offset(1, 0).Range("A1").Activate
     
 End Sub
-
-
 
 
 
