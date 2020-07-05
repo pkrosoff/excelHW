@@ -76,7 +76,7 @@ For i = 2 To last_row
     summary_row = 2
     
         Dim total_volume As Variant
-    
+        
     For k = 2 To last_row
     
     
@@ -132,7 +132,7 @@ For i = 2 To last_row
     
     End If
     
-    If (Cells(m + 1, 13).Value > Cells(m, 13).Value) And (Cells(m + 1, 12).Value > greatest_volume) Then
+    If (Cells(m + 1, 13).Value > Cells(m, 13).Value) And (Cells(m + 1, 13).Value > greatest_volume) Then
 
     
     greatest_volume = Cells(m + 1, 13).Value
@@ -162,8 +162,11 @@ For i = 2 To last_row
     Range("P" & summary_table).Value = greatest_ticker
     Range("Q" & summary_table).Value = greatest_volume
     
+   
     
 End Sub
+
+
 
 
 
