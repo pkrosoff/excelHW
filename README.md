@@ -3,19 +3,14 @@
 
 The following pictures are screenshots of the Multiple Year Stock Data:
 
-*2014 Data
 
-![2014 Data](/Desktop/excel_hw_pics/2014.png)
-
-
-*2015 Data
-
-![GitHub Logo](/Desktop/excel_hw_pics/2015.png)
+![2014 Data](~Desktop/excel_hw_pics/2014.png)
 
 
-*2016 Data
+![2015 Data](~Desktop/excel_hw_pics/2015.png)
 
-![GitHub Logo](/Desktop/excel_hw_pics/2016.png)
+
+![2016 Data](~Desktop/excel_hw_pics/2016.png)
 
 
 
