@@ -1,7 +1,4 @@
 Sub alpha_test()
- 
-'loop through worksheets
-'?????
 
 Dim ws As Worksheet
 
