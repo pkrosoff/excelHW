@@ -79,7 +79,7 @@ For i = 2 To last_row
   
     summary_row = 2
     
-        Dim total_volume As Variants
+        Dim total_volume As Variant
     
     For K = 2 To last_row
     
@@ -197,6 +197,8 @@ For i = 2 To last_row
     
 Next ws
 End Sub
+
+
 
 
 
