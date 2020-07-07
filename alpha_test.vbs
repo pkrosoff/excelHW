@@ -116,9 +116,9 @@ For i = 2 To last_row
     Dim summary_table As Variant
     Dim worst_ticker As String
     Dim worst_decrease As Double
-    Dim greatest_volume As Variant
+    Dim greatest_volume As Single
     Dim greatest_ticker As String
-    
+   
     
     summary_table = 2
     
@@ -172,6 +172,11 @@ For i = 2 To last_row
     ws.Range("L1").Value = "Percent Change"
     ws.Range("M1").Value = "Total Stock Volume"
     
+     
+    best_increase = 0
+    worst_decrease = 0
+    greatest_volume = 0
+    
     'conditional formatting (must be in cell A1 :/ )
     ActiveCell.Offset(0, 10).Columns("A:A").EntireColumn.Select
     Selection.FormatConditions.Add Type:=xlCellValue, Operator:=xlGreater, _
@@ -197,6 +202,10 @@ For i = 2 To last_row
     
 Next ws
 End Sub
+
+
+
+
 
 
 
